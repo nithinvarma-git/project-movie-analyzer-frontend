@@ -27,7 +27,7 @@ pipeline {
 
         stage('Docker Push') {
             steps {
-                dockerECRImagePush('$imageName', '$dockerTag', 'ap-south-1')
+                dockerECRImagePush('$imageName', '$dockerTag', 'frontend', 'awsCred', 'ap-south-1')
             }
         }
 
