@@ -2,12 +2,12 @@
 
 pipeline {
     environment {
-        ecrRegistry = "070797855002.dkr.ecr.ap-south-1.amazonaws.com"
+        ecrRegistry = "768649629888.dkr.ecr.eu-north-1.amazonaws.com"
         imageName = "${ecrRegistry}/frontend"
         branchName = sh(script: 'echo $BRANCH_NAME | sed "s#/#-#"', returnStdout: true).trim()
         gitCommit = "${GIT_COMMIT[0..6]}"
         dockerTag = "${branchName}-${gitCommit}-${env.BUILD_NUMBER}"
-        gitRepoURL = "https://github.com/artisantek/project-movie-analyzer-frontend.git"
+        gitRepoURL = "https://github.com/nithinvarma-git/project-movie-analyzer-frontend.git"
     }
     agent {
         label 'agent'
