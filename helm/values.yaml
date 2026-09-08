@@ -38,3 +38,4 @@ ingress:
     targetType: ip
   enabled: true
   host: movie.sskdevops.in
+
