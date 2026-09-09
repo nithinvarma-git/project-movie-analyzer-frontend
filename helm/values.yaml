@@ -31,11 +31,11 @@ frontend:
     type: NodePort
 ingress:
   alb:
-    certificateArn: arn:aws:acm:ap-south-1:070797855002:certificate/1b1ab1c4-6df7-402d-8a81-a2d700fd50ee
+    # certificateArn: arn:aws:acm:ap-south-1:070797855002:certificate/1b1ab1c4-6df7-402d-8a81-a2d700fd50ee
     groupName: shared-alb
     groupOrder: '10'
     scheme: internet-facing
     targetType: ip
   enabled: true
-  host: movie.sskdevops.in
+  # host: movie.sskdevops.in
 
