@@ -44,7 +44,7 @@ pipeline {
 
         stage('Kubernetes Deploy - DEV') {
             when { branch 'dev' }
-            steps { kubernetesEKSHelmDeploy(('$imageName', '$dockerTag', 'movie-analyzer-frontend', 'awsCred', 'eu-north-1', 'movie-eks', 'dev') }
+            steps { kubernetesEKSHelmDeploy('$imageName', '$dockerTag', 'movie-analyzer-frontend', 'awsCred', 'eu-north-1', 'movie-eks', 'dev') }
         }
 
 
