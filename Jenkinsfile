@@ -44,19 +44,19 @@ pipeline {
 
         stage('Kubernetes Deploy - DEV') {
             when { branch 'dev' }
-            steps { kubernetesEKSHelmDeploy('movie-analyzer-frontend', 'dev') }
+            steps { kubernetesEKSHelmDeploy(('$imageName', '$dockerTag', 'movie-analyzer-frontend', 'awsCred', 'eu-north-1', 'movie-eks', 'dev') }
         }
 
 
 
         stage('Kubernetes Deploy - STAGING') {
             when { branch 'staging' }
-            steps { kubernetesEKSHelmDeploy('movie-analyzer-frontend', 'staging') }
+            steps { kubernetesEKSHelmDeploy('$imageName', '$dockerTag', 'movie-analyzer-frontend', 'awsCred', 'eu-north-1', 'movie-eks', 'staging') }
         }
 
         stage('Kubernetes Deploy - PROD') {
             when { branch 'master' }
-            steps { kubernetesEKSHelmDeploy('movie-analyzer-frontend', 'prod') }
+            steps { kubernetesEKSHelmDeploy('$imageName', '$dockerTag', 'movie-analyzer-frontend', 'awsCred', 'eu-north-1', 'movie-eks', 'prod') }
         }
     }
 }
